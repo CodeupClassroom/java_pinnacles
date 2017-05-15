@@ -15,19 +15,23 @@ public class Factorial {
 
         do {
             number = getNumber(output, input);
-
             // there's gonna be a series of transformations
             // constant -> variable
             // variable -> if statement
             // if -> loop
             // extract method/function
             output.println(number + "! = " + calculateFactorial(number));
-
-            output.println("Do you want to continue (y/n)?");
-            // delimiter, delimiter for next is the space
-            // delimiter for nextLine is the enter
-            wantsToContinue = input.next();
+            wantsToContinue = askIfUserWantsToContinue(input, output);
         } while ("y".equalsIgnoreCase(wantsToContinue));
+    }
+
+    private static String askIfUserWantsToContinue(Scanner input, PrintStream output) {
+        String wantsToContinue;
+        output.println("Do you want to continue (y/n)?");
+        // delimiter, delimiter for next is the space
+        // delimiter for nextLine is the enter
+        wantsToContinue = input.next();
+        return wantsToContinue;
     }
 
     public static long calculateFactorial(long number) {
