@@ -14,7 +14,7 @@ public class Factorial {
         PrintStream output = System.out; // extract variable
 
         do {
-            number = getNumber(output, input);
+            number = askUserForANumberToCalculateFactorial(output, input);  // rename method
             // there's gonna be a series of transformations
             // constant -> variable
             // variable -> if statement
@@ -42,7 +42,7 @@ public class Factorial {
         return factorial;
     }
 
-    public static long  getNumber(PrintStream output, Scanner input) {
+    public static long askUserForANumberToCalculateFactorial(PrintStream output, Scanner input) {
         output.println("Enter an integer number");
         //long number = input.nextLong();  //inline variable
         return input.nextLong();
