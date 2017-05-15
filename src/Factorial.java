@@ -21,17 +21,21 @@ public class Factorial {
             // constant -> variable
             // variable -> if statement
             // if -> loop
-            factorial = 1;
-            for (int i = 1; i <= number; i++) { // counter
-                factorial = factorial * i;  // accumulator
-            }
-
-            output.println(number + "! = " + factorial);
+            // extract method/function
+            output.println(number + "! = " + calculateFactorial(number));
 
             output.println("Do you want to continue (y/n)?");
             // delimiter, delimiter for next is the space
             // delimiter for nextLine is the enter
             wantsToContinue = input.next();
         } while ("y".equalsIgnoreCase(wantsToContinue));
+    }
+
+    public static long calculateFactorial(long number) {
+        int factorial = 1; // local variable
+        for (int i = 1; i <= number; i++) { // counter
+            factorial = factorial * i;  // accumulator
+        }
+        return factorial;
     }
 }
