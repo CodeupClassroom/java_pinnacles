@@ -14,8 +14,7 @@ public class Factorial {
         PrintStream output = System.out; // extract variable
 
         do {
-            output.println("Enter an integer number");
-            number = input.nextLong();
+            number = getNumber(output, input);
 
             // there's gonna be a series of transformations
             // constant -> variable
@@ -37,5 +36,11 @@ public class Factorial {
             factorial = factorial * i;  // accumulator
         }
         return factorial;
+    }
+
+    public static long  getNumber(PrintStream output, Scanner input) {
+        output.println("Enter an integer number");
+        //long number = input.nextLong();  //inline variable
+        return input.nextLong();
     }
 }
