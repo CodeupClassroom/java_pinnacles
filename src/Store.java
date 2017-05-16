@@ -15,6 +15,7 @@ public class Store {
         // receipt
         Scanner input = new Scanner(System.in);
 
+        String wantsToContinue;
         do {
             System.out.println("Enter the name of the product");
             String productDescription = input.nextLine();
@@ -30,6 +31,9 @@ public class Store {
                 productDescription, productPrice, quantity
             );
             System.out.println(receiptLine);
-        } while (true);
+
+            System.out.println("Do you want to buy another product? (y/n)");
+            wantsToContinue = input.nextLine();
+        } while ("y".equalsIgnoreCase(wantsToContinue));
     }
 }
