@@ -16,6 +16,7 @@ public class Store {
         Scanner input = new Scanner(System.in);
         String receipt = ""; // accumulator
         String wantsToContinue;
+        double productTotal;
         do {
             System.out.println("Enter the name of the product");
             String productDescription = input.nextLine();
@@ -26,9 +27,10 @@ public class Store {
             // Remove trailing enter, it would produce an error before reading the next product description
             input.nextLine();
 
+            productTotal = productPrice * quantity;
             String receiptLine = String.format(
-                "%s $%.2f %d\n",
-                productDescription, productPrice, quantity
+                "%s $%.2f %d $%.2f\n",
+                productDescription, productPrice, quantity, productTotal
             );
             receipt += receiptLine;
             System.out.println(receipt);
