@@ -14,7 +14,7 @@ public class Store {
         // ^ receipt line
         // receipt
         Scanner input = new Scanner(System.in);
-
+        String receipt = ""; // accumulator
         String wantsToContinue;
         do {
             System.out.println("Enter the name of the product");
@@ -27,10 +27,11 @@ public class Store {
             input.nextLine();
 
             String receiptLine = String.format(
-                "%s $%.2f %d",
+                "%s $%.2f %d\n",
                 productDescription, productPrice, quantity
             );
-            System.out.println(receiptLine);
+            receipt += receiptLine;
+            System.out.println(receipt);
 
             System.out.println("Do you want to buy another product? (y/n)");
             wantsToContinue = input.nextLine();
