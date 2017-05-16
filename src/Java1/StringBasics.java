@@ -1,3 +1,5 @@
+package Java1;
+
 public class StringBasics {
     public static void main(String[] args) {
         String message;

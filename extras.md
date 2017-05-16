@@ -47,7 +47,7 @@ Input a number: 15
  0 1 0 1 1 0 1 1 1 0 1 0 1 0 0                            
  1 0 1 1 1 0 1 1 1 0 0 0 0 1 0 
  ```
- ## Funny Strings
+ ## Funny Java1.Strings
  
  Ask the user for a string with a minimum of 10 characters and a number between 1 and 5. 
  

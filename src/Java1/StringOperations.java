@@ -1,3 +1,5 @@
+package Java1;
+
 public class StringOperations {
     public static void main(String[] args) {
         String sentences = "This is some text";  // 1 string

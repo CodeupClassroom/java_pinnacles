@@ -1,6 +1,8 @@
+package Java1;
+
 public class Types {
     public static void main(String[] args) {
-        // Types in JS
+        // Java1.Types in JS
         // string, boolean, number, array, object
         // Numbers have a classification (size):
         // integers
