@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Store {
     public static void main(String[] args) {
         // Input the information of the products that I bought
@@ -11,9 +13,13 @@ public class Store {
         // product description, product price, quantity -> parts of something
         // ^ receipt line
         // receipt
-        String productDescription = "Mango";
-        double productPrice = 2.5;
-        int quantity = 10;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the name of the product");
+        String productDescription = input.nextLine();
+        System.out.println("Enter the price of the product");
+        double productPrice = input.nextDouble();
+        System.out.println("Enter the quantity that you're buying");
+        int quantity = input.nextInt();
 
         String receiptLine = String.format(
             "%s $%.2f %d",
