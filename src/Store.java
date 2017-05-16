@@ -14,18 +14,22 @@ public class Store {
         // ^ receipt line
         // receipt
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter the name of the product");
-        String productDescription = input.nextLine();
-        System.out.println("Enter the price of the product");
-        double productPrice = input.nextDouble();
-        System.out.println("Enter the quantity that you're buying");
-        int quantity = input.nextInt();
 
-        String receiptLine = String.format(
-            "%s $%.2f %d",
-            productDescription, productPrice, quantity
-        );
+        do {
+            System.out.println("Enter the name of the product");
+            String productDescription = input.nextLine();
+            System.out.println("Enter the price of the product");
+            double productPrice = input.nextDouble();
+            System.out.println("Enter the quantity that you're buying");
+            int quantity = input.nextInt();
+            // Remove trailing enter, it would produce an error before reading the next product description
+            input.nextLine();
 
-        System.out.println(receiptLine);
+            String receiptLine = String.format(
+                "%s $%.2f %d",
+                productDescription, productPrice, quantity
+            );
+            System.out.println(receiptLine);
+        } while (true);
     }
 }
