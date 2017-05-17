@@ -19,11 +19,11 @@ public class Store {
         String wantsToContinue;
         int option;
 
+        Receipt receipt = new Receipt();
         do {
             System.out.println("1. Sale\n2. Receipt\n3. Exit");
             option = input.nextInt();
             input.nextLine();
-            Receipt receipt = new Receipt();
             switch (option) {
                 case 1:
                     do {
@@ -48,8 +48,7 @@ public class Store {
                     break;
                 case 3:
                     System.out.printf("Bye!");
-                    System.exit(0);
             }
-        } while (option == 3);
+        } while (option != 3);
     }
 }
