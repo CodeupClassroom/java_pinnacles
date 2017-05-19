@@ -5,6 +5,8 @@ package Java2;
  */
 public class BestBuy {
 
+
+
     public static void main(String[] args) {
 
         Computer mac = new Computer("Laptop");
