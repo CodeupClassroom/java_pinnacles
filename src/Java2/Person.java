@@ -1,7 +1,12 @@
 package Java2;
 
-public class Person {
-    private String name;
+// Favor composition over inheritance
+// Inheritance breaks encapsulation
+
+// A final class cannot be extended
+// It cannot have children classes
+/* final */ public class Person {
+    protected String name;  // Is visible for the children, and classes on the same package
     private int age;
     private char gender;
 
@@ -19,32 +24,4 @@ public class Person {
             age
         );
     }
-
-    public static void main(String[] args) {
-        Person person = new Person("Fer", 27, 'M');
-        System.out.println(person.description());
-
-        Student student = new Student(
-            "Luis", 37, 'M', "Pinnacles", "Java"
-        );
-        System.out.println(student.description());
-    }
 }
-
-class Student extends Person {
-    private String cohort;
-    private String backendLanguage;
-
-    public Student(String name, int age, char gender, String cohort, String backendLanguage) {
-        super(name, age, gender);
-        this.cohort = cohort;
-        this.backendLanguage = backendLanguage;
-    }
-
-    public String description() {
-        return String.format(
-            "%s. Cohort: %s Language: %s", super.description(), cohort, backendLanguage
-        );
-    }
-}
-
