@@ -10,6 +10,7 @@ public class Rectangle {
     }
 
     public double getArea() {
+        System.out.println("The area comes from the Rectangle class");
         return length * width;
     }
 
