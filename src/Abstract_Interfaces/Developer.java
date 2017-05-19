@@ -3,7 +3,7 @@ package Abstract_Interfaces;
 /**
  * Created by Fer on 5/19/17.
  */
-public class Developer extends Employee {
+public class Developer extends Employee{
 
     public Developer(String name, double salary){
         super(name, salary);
@@ -11,7 +11,7 @@ public class Developer extends Employee {
 
     @Override
     public String work() {
-        return "Code, code, bugs, fix, code";
+        return "Coder, code, bugs, fix, code";
     }
 
 }
