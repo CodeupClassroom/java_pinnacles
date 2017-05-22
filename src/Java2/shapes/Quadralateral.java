@@ -4,8 +4,8 @@
 package Java2.shapes;
 
 abstract public class Quadralateral  extends Shape {
-    private final double length;
-    private final double width;
+    protected double length;
+    protected double width;
 
     public Quadralateral(double length, double width) {
         this.length = length;
