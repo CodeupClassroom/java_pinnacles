@@ -3,5 +3,5 @@
  */
 package Java2.shapes;
 
-abstract public class Quadralateral  extends Shape {
+abstract public class Shape {
 }
