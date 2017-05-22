@@ -1,19 +1,27 @@
 package Java2.shapes;
 
-public class Square extends Rectangle {
+public class Square extends Quadralateral implements Measurable {
     public Square(double side) {
         super(side, side);
     }
 
-    public double getArea(){
-        System.out.println("The area comes from the Square class");
-        return super.getArea();
+    public double getArea() {
+        return length * width;
     }
 
-    public double getPerimeter(){
-        System.out.println("The Perimeter comes from the Square class");
-        return super.getPerimeter();
+    public double getPerimeter() {
+        return 2 * length + 2 * width;
     }
 
+    @Override
+    public void setLength(double length) {
+        this.length = length;
+        width = length;
+    }
 
+    @Override
+    public void setWidth(double width) {
+        this.width = width;
+        length = width;
+    }
 }
