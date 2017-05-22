@@ -13,7 +13,26 @@ public class HashMapExamples {
 
         map.put("one", 1);
         map.put("two", 2);
+        map.put("three", 3);
+        map.put("four", 4);
 
-        System.out.println(map.get("one"));
+
+        // Trying to get an element with an invalid key will not throw an exception, will return a null instead.
+        System.out.println(map.get("asdasd"));
+
+        System.out.println(map.size());
+
+
+        // It is really hard to loop in a map using the usual loops so the next example uses the forEach function, try to avoid this:
+//        for(int i = 0; i < map.size(); i++){
+//            System.out.println(map.get(i));
+//        }
+
+
+        //Looping in a map using the forEach function, don't forget to use the parameters in the right order (KEY, VALUE)
+        map.forEach((key, value) -> {
+            System.out.println("key:" + key + " value: " + value);
+        });
+
     }
 }
