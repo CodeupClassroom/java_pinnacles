@@ -30,23 +30,28 @@ public class GradesApplication {
         students.put("justin", student2);
         students.put("zach", student3);
 
-        System.out.println("Welcome!");
-        System.out.println("Here are the github usernames of our students:");
+        String yesNo;
+        do {
+            System.out.println("Welcome!");
+            System.out.println("Here are the github usernames of our students:");
 
-        students.forEach((username, student) -> System.out.print("|" + username + "| "));
+            students.forEach((username, student) -> System.out.print("|" + username + "| "));
 
-        System.out.println("\nWhat student would you like to see more information on?");
-        String username = input.next();
+            System.out.println("\nWhat student would you like to see more information on?");
+            String username = input.next();
 
-        //if (students.get(username) == null) {
-        if (!students.containsKey(username)) {
-            System.out.println("Sorry, no student found with the github username of " + username + ".");
-        } else {
-            Student student = students.get(username);
-            System.out.println("Name: " + student.getName() + " - Gihub Username: " + username);
-            System.out.println("Current Average: " + student.getGradeAverage());
-        }
+            //if (students.get(username) == null) {
+            if (!students.containsKey(username)) {
+                System.out.println("Sorry, no student found with the github username of " + username + ".");
+            } else {
+                Student student = students.get(username);
+                System.out.println("Name: " + student.getName() + " - Gihub Username: " + username);
+                System.out.println("Current Average: " + student.getGradeAverage());
+            }
 
-        System.out.println(username);
+            System.out.println("Would you like to see another student? (y/n)");
+            yesNo = input.next();
+        } while ("y".equalsIgnoreCase(yesNo));
+        System.out.println("Goodbye, and have a wonderful day!");
     }
 }
