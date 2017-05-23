@@ -70,3 +70,19 @@ Input a number: 15
   ```
   600 NAvaRro StReeT
   ```
+  
+## ArrayList extra exercise
+  
+Using the classes `src/Java1/Product.java`, `src/Java1/Receipt.java` and
+`src/Store.java`, we will do some refactoring in `Receipt` to use an `ArrayList` instead of 
+the `string` that represents the receipt lines.
+  
+1. Refactor the `Receipt` class to convert the attribute `lines` to an `ArrayList` of products
+   (use a generic collection).
+3. Initialize the `ArrayList` in the class constructor.
+4. The method `addLine` should only add the product to the `ArrayList` and update its total.
+5. Create a new `private` method `formatLines` that returns a `String`. 
+   Within that method iterate over your products, and create a string with
+   the same format we were using before the refactoring.
+6. Call this new method from the existing method `print`
+7. Confirm that everything works as expected.
