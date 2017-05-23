@@ -30,6 +30,22 @@ public class Student {
         for (Integer grade : grades) {
             sum += grade;
         }
-        return sum / grades.size();
+        return (double) sum / grades.size();
+    }
+
+    public static void main(String[] args) {
+        Student student1 = new Student("Luis");
+        student1.addGrade(89);
+        student1.addGrade(70);
+        student1.addGrade(90);
+
+        System.out.println(student1.getGradeAverage());
+
+        Student student2 = new Student("Zach");
+        student2.addGrade(100);
+        student2.addGrade(50);
+        student2.addGrade(80);
+
+        System.out.println(student2.getName() + " " + student2.getGradeAverage());
     }
 }
