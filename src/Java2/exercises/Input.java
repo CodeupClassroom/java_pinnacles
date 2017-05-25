@@ -28,7 +28,12 @@ public class Input {
     }
 
     public int getInt(){
-        return scan.nextInt();
+        try {
+            return Integer.valueOf(this.getString());
+        } catch (NumberFormatException e) {
+            System.out.print("Please enter *an integer*: ");
+            return getInt();
+        }
     }
 
     public int getInt(int min, int max){
@@ -57,6 +62,13 @@ public class Input {
         System.out.println(num + " number out of range, try again");
         return getDouble(min, max);
 
+    }
+
+    public static void main(String[] cheese) {
+        Input input = new Input();
+        System.out.print("Enter a a number: ");
+        int userInput = input.getInt();
+        System.out.println("You entered " + userInput + "!");
     }
 
 }
