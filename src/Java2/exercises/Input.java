@@ -28,11 +28,23 @@ public class Input {
     }
 
     public int getInt(){
-        return scan.nextInt();
+        try {
+            return Integer.valueOf(this.getString());
+        } catch (NumberFormatException e) {
+            System.out.print("Please enter *an integer*: ");
+            return getInt();
+        }
     }
 
     public int getInt(int min, int max){
-        int num = this.getInt();
+        int num;
+        try {
+            String possibleNumber = this.getString();
+            num = Integer.valueOf(possibleNumber);
+        } catch (NumberFormatException e) {
+            System.out.print("Please enter *an integer* between " + min + " and " + max + ": ");
+            return getInt(min, max);
+        }
 
         if(num >= min && num <= max){
             return num;
@@ -57,6 +69,13 @@ public class Input {
         System.out.println(num + " number out of range, try again");
         return getDouble(min, max);
 
+    }
+
+    public static void main(String[] cheese) {
+        Input input = new Input();
+        System.out.print("Enter a a number between 20 and 30: ");
+        int userInput = input.getInt(20, 30);
+        System.out.println("You entered " + userInput + "!");
     }
 
 }
