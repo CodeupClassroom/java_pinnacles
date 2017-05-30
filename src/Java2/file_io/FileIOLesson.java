@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.Arrays;
 import java.util.List;
 
 public class FileIOLesson {
@@ -12,7 +14,7 @@ public class FileIOLesson {
         String filename = "info.txt";
 
         Path dataDirectory = Paths.get(directory);
-        Path dataFile = Paths.get(directory, filename);
+        Path dataFile = Paths.get("data", "info.txt");
 
         if (Files.notExists(dataDirectory)) {
             Files.createDirectories(dataDirectory);
@@ -22,10 +24,17 @@ public class FileIOLesson {
             Files.createFile(dataFile);
         }
 
-        List<String> lines = Files.readAllLines(dataFile);
+        List<String> groceryList = Arrays.asList("coffee", "milk", "sugar", "mango");
+        Files.write(
+            Paths.get("data", "info.txt"),
+            groceryList,
+            StandardOpenOption.APPEND
+        );
 
+        List<String> lines = Files.readAllLines(dataFile);
         for (String line : lines) {
             System.out.println(line);
         }
+
     }
 }
